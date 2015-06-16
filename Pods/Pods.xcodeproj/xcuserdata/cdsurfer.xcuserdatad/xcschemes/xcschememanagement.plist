@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-RottenFruit-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RottenFruit-FontAwesome-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RottenFruit-SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RottenFruit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>14801396D1E84ABF71A3F0BA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52F2221622100586E3231E9B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7E1A8295EC3ACE9BCC1BFFA8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9A75CEFE874CA73CC249B22</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

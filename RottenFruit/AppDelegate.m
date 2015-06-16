@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "Reachability.h"
 
 @interface AppDelegate ()
+
+@property Reachability *internetReachable;
 
 @end
 
@@ -17,6 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus:) name:kReachabilityChangedNotification object:nil];
+    self.internetReachable = [Reachability reachabilityForInternetConnection];
+    [self.internetReachable startNotifier];
+    
     return YES;
 }
 
@@ -40,6 +48,31 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)checkNetworkStatus:(NSNotification *)notice {
+    NetworkStatus networkStatus = [self.internetReachable currentReachabilityStatus];
+    switch (networkStatus)
+    {
+        case NotReachable:
+        {
+            NSLog(@"The internet is down.");
+            [self.moviesViewController.errorView showError];
+            break;
+        }
+        case ReachableViaWiFi:
+        {
+            NSLog(@"The internet is working via WIFI");
+            [self.moviesViewController.errorView dismissError];
+            break;
+        }
+        case ReachableViaWWAN:
+        {
+            NSLog(@"The internet is working via WWAN!");
+            [self.moviesViewController.errorView dismissError];
+            break;
+        }
+    }
 }
 
 @end
